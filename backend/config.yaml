@@ -1,0 +1,53 @@
+# 知识库检索工具配置文件
+
+# 大模型配置
+llm:
+  default_model: "qwen2.5:7b-instruct"
+  retry_times: 2  # LLM 调用失败重试次数
+  timeout: 120  # 请求超时时间（秒）
+  models:
+    - name: "qwen2.5:7b-instruct-q4_0"
+      base_url: "http://localhost:11434"
+      api_key: ""
+      context_length: 4096
+    - name: "qwen2.5:7b-instruct"
+      base_url: "http://localhost:11434"
+      api_key: ""
+      context_length: 4096
+    - name: "qwen2.5:14b-instruct"
+      base_url: "http://localhost:11434"
+      api_key: ""
+      context_length: 16384
+    - name: "llama3.1:8b-instruct"
+      base_url: "http://localhost:11434"
+      api_key: ""
+      context_length: 8192
+
+# 知识库配置
+knowledge:
+  root_path: "knowledge/"  # 相对于 backend 目录
+  max_file_size_mb: 50  # 单个文件最大大小（MB）
+  supported_extensions:
+    - ".md"
+    - ".txt"
+    - ".pdf"
+    - ".xlsx"
+    - ".xls"
+
+# Skill 配置
+skill:
+  skill_path: "rag-skill"  # 相对于 backend 目录
+  max_retrieval_rounds: 5  # 最大检索轮次
+  max_context_tokens: 4096  # 最大上下文 token 数
+
+# 服务器配置
+server:
+  host: "0.0.0.0"
+  port: 8000
+  debug: true
+
+# 日志配置
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"

@@ -1,0 +1,34 @@
+# FastAPI 框架
+fastapi
+uvicorn[standard]
+websockets
+pydantic
+pydantic-settings
+
+# 配置文件
+pyyaml
+
+# Markdown 解析
+markdown
+mistune
+
+# PDF 处理
+pdfplumber
+pypdf
+
+# Excel 处理
+pandas
+openpyxl
+xlrd
+
+# HTTP 客户端（调用 ollama API）
+httpx
+
+# 文件操作
+python-multipart
+
+# 日志
+python-json-logger
+
+# 工具依赖
+grep-ast  # 可选，用于更强大的 grep 功能
